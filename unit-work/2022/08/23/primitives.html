@@ -178,12 +178,14 @@ window.onload = wrap_img;
         <span class="k">try</span> <span class="p">{</span>
             <span class="n">celsius</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
             <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">celsius</span><span class="p">);</span>
+            <span class="c1">// sets variable to True meaning the double entered is correct</span>
             <span class="n">correctDouble</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
         <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// if not a number</span>
             <span class="n">correctDouble</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
         <span class="p">}</span>
         <span class="n">input</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
 
+        <span class="c1">// Kills prompt if value is not a double</span>
         <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">correctDouble</span><span class="p">)</span> <span class="p">{</span>
             <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nNot a double! Please try again"</span><span class="p">);</span>
             <span class="k">return</span><span class="p">;</span>
@@ -191,6 +193,7 @@ window.onload = wrap_img;
         <span class="c1">// Mathematics for converting celsius to fahrenheit</span>
         <span class="n">fahrenheit</span> <span class="o">=</span> <span class="p">((</span><span class="n">celsius</span> <span class="o">*</span> <span class="mi">9</span><span class="p">)</span> <span class="o">/</span> <span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> 
 
+        <span class="c1">// final formatted string with both variables</span>
         <span class="n">finalString</span> <span class="o">=</span> <span class="s">"The temperature of "</span> <span class="o">+</span> <span class="n">celsius</span> <span class="o">+</span> <span class="s">" degrees celsius is equal to "</span> <span class="o">+</span> <span class="n">fahrenheit</span> <span class="o">+</span> <span class="s">" degrees farenheit"</span><span class="p">;</span>
 
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"The temperature of "</span> <span class="o">+</span> <span class="n">celsius</span> <span class="o">+</span> <span class="s">" degrees celsius is equal to "</span> <span class="o">+</span> <span class="n">fahrenheit</span> <span class="o">+</span> <span class="s">" degrees farenheit"</span><span class="p">);</span> 
