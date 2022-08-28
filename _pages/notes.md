@@ -4,7 +4,7 @@ title: Notes for CSA
 permalink: /notes/
 ---
 
-# Key Vocab
+## Key Vocab
 
 * Primitives
   * char
