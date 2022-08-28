@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -275,11 +275,15 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Sports</span> <span class="p">{</span>
+
+    <span class="c1">// attributes of the class Sports</span>
     <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
     <span class="kt">double</span> <span class="n">population</span><span class="p">;</span>
 
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Creating new object called basketball</span>
         <span class="n">Sports</span> <span class="n">basketball</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Sports</span><span class="p">();</span>
+        <span class="c1">// setting attributes for the object basketball</span>
         <span class="n">basketball</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="s">"Basketball"</span><span class="p">;</span>
         <span class="n">basketball</span><span class="p">.</span><span class="na">population</span> <span class="o">=</span> <span class="mf">24.23</span><span class="p">;</span> <span class="c1">// in millions</span>
 
@@ -331,6 +335,7 @@ window.onload = wrap_img;
 <div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Sports</span> <span class="p">{</span>
     <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
 
+    <span class="c1">// constructor for the class Sports. Needs to be same name as class</span>
     <span class="kd">public</span> <span class="nf">Sports</span><span class="p">(</span><span class="n">String</span> <span class="n">title</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">name</span> <span class="o">=</span> <span class="n">title</span><span class="p">;</span>
     <span class="p">}</span>
@@ -386,12 +391,15 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Sports</span> <span class="p">{</span>
+    <span class="c1">// can only be changed with a setter</span>
     <span class="kd">private</span> <span class="n">String</span> <span class="n">title</span><span class="p">;</span>
 
+    <span class="c1">// returns private variable information</span>
     <span class="kd">public</span> <span class="n">String</span> <span class="nf">getTitle</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">return</span> <span class="n">title</span><span class="p">;</span>
     <span class="p">}</span>
 
+    <span class="c1">// only thing that can change the private variable title</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setTitle</span><span class="p">(</span><span class="n">String</span> <span class="n">title</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">;</span>
     <span class="p">}</span>
@@ -447,20 +455,23 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Desserts</span> <span class="p">{</span>
+
+    <span class="c1">// setting class attributes that can only be accessed with setter/getter</span>
     <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
     <span class="kd">private</span> <span class="kt">int</span> <span class="n">price</span><span class="p">;</span>
 
+    <span class="c1">// intiailize variables in constructor</span>
     <span class="kd">public</span> <span class="nf">Desserts</span><span class="p">()</span> <span class="p">{</span>
         <span class="n">name</span> <span class="o">=</span> <span class="s">"dessert"</span><span class="p">;</span>
         <span class="n">price</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
     <span class="p">}</span>
-
+    <span class="c1">// setter method</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setDesc</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">price</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"In Setter"</span><span class="p">);</span>
         <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
         <span class="k">this</span><span class="p">.</span><span class="na">price</span> <span class="o">=</span> <span class="n">price</span><span class="p">;</span>
     <span class="p">}</span>
-
+    <span class="c1">// getter method</span>
     <span class="kd">public</span> <span class="n">String</span> <span class="nf">getDesc</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">return</span> <span class="s">"The name of the dessert is "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">+</span> <span class="s">" and the price is $"</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">price</span><span class="p">;</span>
     <span class="p">}</span>
