@@ -158,10 +158,7 @@
   
 
   
-  
-
-  
-      ,"page12": {
+      ,"page11": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://aaditgupta21.github.io/fastpages-CSA/robots.txt",
