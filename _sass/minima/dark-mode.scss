@@ -12,11 +12,12 @@ html, body, input, textarea, select, button {
 }
 
 a {
-    color: rgb(75, 186, 255) !important;
+    color: #808080 !important;
 }
 
 a:hover {
     color:$high-emph !important;
+    text-decoration: none !important;
 }
 
 .site-title, .site-title:visited, .site-nav, .page-link {
