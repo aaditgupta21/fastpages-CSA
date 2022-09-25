@@ -248,18 +248,29 @@
   
 
   
+      ,"page8": {
+          "title": "NBA Teams",
+          "content": "&lt;!DOCTYPE html&gt; . NBA Teams . NBA Teams . Team Name Team Logo Conference Division City . .",
+          "url": "https://aaditgupta21.github.io/fastpages-CSA/nbateams",
+          "relUrl": "/nbateams",
+          "date": ""
+      }
+      
   
 
   
   
 
   
+  
+
+  
 
   
   
 
   
-      ,"page12": {
+      ,"page13": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://aaditgupta21.github.io/fastpages-CSA/robots.txt",
