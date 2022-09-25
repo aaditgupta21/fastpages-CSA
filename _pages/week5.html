@@ -1,0 +1,88 @@
+---
+layout: default
+permalink: /nbateams
+title: NBA Teams
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>NBA Teams</title>
+    <meta name="description" content="NBA Teams and their Information.">
+
+  </head>
+  <body>
+    <h1 style="text-align: center;">NBA <span style="color: #ff5e5e !important">Teams</span></h1>
+
+    <table class="teams" border="1">
+        <tr>
+            <th>Team Name</th>
+            <th>Team Logo</th>
+            <th>Conference</th>
+            <th>Division</th>
+            <th>City</th>
+
+        </tr>
+    </table>
+    <script type="text/javascript">
+        const teams = document.querySelector('.teams')
+
+        fetch('https://www.balldontlie.io/api/v1/teams')
+            .then(data => data.json())
+            .then(data => {
+                console.log(data);
+                data.data.forEach(data => {
+                    teams.innerHTML += `
+        <tr>
+          <td>${data.full_name}</td>
+             <td><img class="pic" src="https://loodibee.com/wp-content/uploads/nba-${data.city.toLowerCase().replace(/ /g, "-")}-${data.name.toLowerCase().replace(/ /g, "-")}-logo.png"></td>
+          <td>${data.conference}</td>
+       <td>${data.division}</td>
+       <td>${data.city}</td>
+     </tr>
+       `
+                })
+            })
+    </script>
+
+    <style type="text/css">
+        @import url("https://rsms.me/inter/inter.css");
+        @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap");
+
+        * {
+            font-family: "Inter", sans-serif !important;
+        }
+
+        .profile {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .pic {
+            width: 200px;
+            border-radius: 100%;
+        }
+
+        .teams {
+            margin-right: none;
+            margin-left: none;
+            padding: 0;
+            columns: 3;
+        }
+
+        ul {
+            -webkit-column-count: 3;
+            -moz-column-count: 3;
+            column-count: 3;
+        }
+
+        table {
+            margin: 0 auto;
+            width: 60%;
+            text-align: center;
+        }
+    </style>
+  </body>
+</html>
