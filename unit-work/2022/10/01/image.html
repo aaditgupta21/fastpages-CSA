@@ -242,22 +242,27 @@ window.onload = wrap_img;
 
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">bluescale</span><span class="p">()</span> <span class="p">{</span>
         <span class="n">BufferedImage</span> <span class="n">img</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-        <span class="n">BufferedImage</span> <span class="n">blueImg</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>  
+        <span class="n">BufferedImage</span> <span class="n">imgBlue</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>  
 
         <span class="k">try</span> <span class="p">{</span>
             <span class="c1">// read an image to BufferedImage for processing</span>
             <span class="n">img</span> <span class="o">=</span> <span class="n">ImageIO</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">inFile</span><span class="p">));</span>  <span class="c1">// set buffer of image data</span>
-            <span class="n">blueImg</span> <span class="o">=</span> <span class="n">img</span><span class="p">;</span>
+            <span class="n">imgBlue</span> <span class="o">=</span> <span class="n">img</span><span class="p">;</span>
             <span class="c1">// create a new BufferedImage for drawing</span>
             <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">img</span><span class="p">.</span><span class="na">getHeight</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
                 <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">img</span><span class="p">.</span><span class="na">getWidth</span><span class="p">();</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
                     <span class="n">Color</span> <span class="n">co</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Color</span><span class="p">(</span><span class="n">img</span><span class="p">.</span><span class="na">getRGB</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">));</span>
+                    <span class="c1">// get RGB values</span>
                     <span class="kt">int</span> <span class="n">red</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="n">co</span><span class="p">.</span><span class="na">getRed</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.299</span><span class="p">);</span>
+
                     <span class="kt">int</span> <span class="n">green</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="n">co</span><span class="p">.</span><span class="na">getGreen</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.587</span><span class="p">);</span>
+
                     <span class="kt">int</span> <span class="n">blue</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="n">co</span><span class="p">.</span><span class="na">getBlue</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.114</span><span class="p">);</span>
+                    
                     <span class="kt">int</span> <span class="n">total</span> <span class="o">=</span> <span class="n">red</span> <span class="o">+</span> <span class="n">green</span> <span class="o">+</span> <span class="n">blue</span><span class="p">;</span>
+                    <span class="c1">// create a new color with the same RGB values but adjusted</span>
                     <span class="n">Color</span> <span class="n">newColor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">total</span><span class="p">);</span>
-                    <span class="n">blueImg</span><span class="p">.</span><span class="na">setRGB</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">newColor</span><span class="p">.</span><span class="na">getRGB</span><span class="p">());</span>
+                    <span class="n">imgBlue</span><span class="p">.</span><span class="na">setRGB</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">newColor</span><span class="p">.</span><span class="na">getRGB</span><span class="p">());</span>
                 <span class="p">}</span>
             <span class="p">}</span>
 
@@ -266,7 +271,7 @@ window.onload = wrap_img;
         <span class="p">}</span>
 
         <span class="k">try</span> <span class="p">{</span>
-            <span class="n">ImageIO</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">convertToBufferedImage</span><span class="p">(</span><span class="n">blueImg</span><span class="p">),</span> <span class="k">this</span><span class="p">.</span><span class="na">ext</span><span class="p">,</span> <span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="n">blueFile</span><span class="p">));</span>
+            <span class="n">ImageIO</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">convertToBufferedImage</span><span class="p">(</span><span class="n">imgBlue</span><span class="p">),</span> <span class="k">this</span><span class="p">.</span><span class="na">ext</span><span class="p">,</span> <span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="n">blueFile</span><span class="p">));</span>
         <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">IOException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">return</span><span class="p">;</span>
         <span class="p">}</span>
