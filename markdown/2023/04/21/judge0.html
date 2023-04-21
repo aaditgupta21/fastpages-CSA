@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>APCSA Judge0 Documentation | Aadit Gupta</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="APCSA Judge0 Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="How to use Judge0 Grading Server" />
+<meta property="og:description" content="How to use Judge0 Grading Server" />
+<link rel="canonical" href="https://aaditgupta21.github.io/fastpages-CSA/markdown/2023/04/21/judge0.html" />
+<meta property="og:url" content="https://aaditgupta21.github.io/fastpages-CSA/markdown/2023/04/21/judge0.html" />
+<meta property="og:site_name" content="Aadit Gupta" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-04-21T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="APCSA Judge0 Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-04-21T00:00:00-05:00","datePublished":"2023-04-21T00:00:00-05:00","description":"How to use Judge0 Grading Server","headline":"APCSA Judge0 Documentation","mainEntityOfPage":{"@type":"WebPage","@id":"https://aaditgupta21.github.io/fastpages-CSA/markdown/2023/04/21/judge0.html"},"url":"https://aaditgupta21.github.io/fastpages-CSA/markdown/2023/04/21/judge0.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/fastpages-CSA/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://aaditgupta21.github.io/fastpages-CSA/feed.xml" title="Aadit Gupta" /><link rel="shortcut icon" type="image/x-icon" href="/fastpages-CSA/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/fastpages-CSA/">Aadit Gupta</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/fastpages-CSA/about/">About Me</a><a class="page-link" href="/fastpages-CSA/notes/">Notes for CSA</a><a class="page-link" href="/fastpages-CSA/search/">Search</a><a class="page-link" href="/fastpages-CSA/categories/">Tags</a><a class="page-link" href="/fastpages-CSA/nbateams">NBA Teams</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">APCSA Judge0 Documentation</h1><p class="page-description">How to use Judge0 Grading Server</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-04-21T00:00:00-05:00" itemprop="datePublished">
+        Apr 21, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      3 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i>
+      
+        <a class="category-tags-link" href="/fastpages-CSA/categories/#markdown">markdown</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#what-is-judge0">What is Judge0</a></li>
+<li class="toc-entry toc-h1"><a href="#how-it-works">How it works</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#sending-a-submission">Sending a submission</a></li>
+<li class="toc-entry toc-h2"><a href="#getting-the-status-of-a-submission">Getting the status of a submission</a></li>
+<li class="toc-entry toc-h2"><a href="#backend-implementation">Backend Implementation</a></li>
+<li class="toc-entry toc-h2"><a href="#cors-issues">CORS Issues</a></li>
+</ul>
+</li>
+</ul><h1 id="what-is-judge0">
+<a class="anchor" href="#what-is-judge0" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is Judge0</h1>
+
+<p>Judge0 is an open-source online code execution and grading system that allows you to run code in more than 50 programming languages.</p>
+
+<p>The Judge0 grading server is a component of the Judge0 system that is responsible for executing and evaluating the submitted code. When a user submits their code, the grading server compiles and runs it on a secure and isolated environment to ensure that it does not harm the system or other users. The grading server then checks the output of the code against the expected output to determine whether the submission is correct.</p>
+
+<h1 id="how-it-works">
+<a class="anchor" href="#how-it-works" aria-hidden="true"><span class="octicon octicon-link"></span></a>How it works</h1>
+
+<h2 id="sending-a-submission">
+<a class="anchor" href="#sending-a-submission" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sending a submission</h2>
+
+<p>To send a submission to the grading server, you need to make a POST request to the <code class="language-plaintext highlighter-rouge">/submissions</code> endpoint. The request body should contain at least the following fields:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">source_code</code> - the source code of the submission</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">language_id</code> - the ID of the programming language that the source code is written in</li>
+</ul>
+
+<p>Other options that may be helpful are:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">stdin</code> - the input that should be sent to the program</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">expected_output</code> - the expected output of the program</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">cpu_time_limit</code> - the maximum amount of time that the program can run for</li>
+</ul>
+
+<p>It will return a JSON object with the most notable field being:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">token</code> - the token that can be used to get the status of the submission</li>
+</ul>
+
+<p>Example of how it would look sending a submission to the server from JavaScript:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// btoa is what allows us to encode the code in base64</span>
+<span class="nx">YOUR_BASE64_ENCODED_CODE</span> <span class="o">=</span> <span class="nx">btoa</span><span class="p">(</span><span class="nx">code</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">API_URL</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://judge0.nighthawkcodingsociety.com/</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">content-type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">source_code</span><span class="p">:</span> <span class="nx">code</span><span class="p">,</span>
+  <span class="na">language_id</span><span class="p">:</span> <span class="mi">62</span><span class="p">,</span> <span class="c1">// Java language ID</span>
+  <span class="na">stdin</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="nx">API_URL</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">submissions</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
+  <span class="na">mode</span><span class="p">:</span> <span class="dl">"</span><span class="s2">cors</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">cache</span><span class="p">:</span> <span class="dl">"</span><span class="s2">no-cache</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">),</span>
+<span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// handle the data output, use this token to get the status of the submission</span>
+    <span class="kd">const</span> <span class="nx">token</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">token</span><span class="p">;</span>
+    <span class="cm">/*
+
+    this is where the interval code goes, see below
+
+    */</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// error handling</span>
+  <span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="getting-the-status-of-a-submission">
+<a class="anchor" href="#getting-the-status-of-a-submission" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting the status of a submission</h2>
+
+<p>To get the status of a submission, you need to make a GET request to the <code class="language-plaintext highlighter-rouge">/submissions/:token</code> endpoint. The <code class="language-plaintext highlighter-rouge">:token</code> part of the URL should be replaced with the token that was returned when the submission was sent.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// We need an interval because the submission needs to keep polling the server to see if it has compiled yet</span>
+<span class="kd">let</span> <span class="nx">interval</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">fetch</span><span class="p">(</span><span class="nx">API_URL</span> <span class="o">+</span> <span class="s2">`submissions/</span><span class="p">${</span><span class="nx">submissionId</span><span class="p">}</span><span class="s2">?base64_encoded=true`</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
+  <span class="p">})</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">status</span><span class="p">.</span><span class="nx">id</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Status is either "queued" or "processing"</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Status: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">data</span><span class="p">.</span><span class="nx">status</span><span class="p">.</span><span class="nx">description</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// Status is "completed"</span>
+        <span class="nx">clearInterval</span><span class="p">(</span><span class="nx">interval</span><span class="p">);</span>
+        <span class="kd">const</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">atob</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">stdout</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Output: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">output</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="c1">// Status is usually 'Compilation Error' or 'Runtime Error'</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="backend-implementation">
+<a class="anchor" href="#backend-implementation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Backend Implementation</h2>
+
+<p>If you decide to do backend implementation in Java, then we recommend <a href="https://rapidapi.com/judge0-official/api/judge0-ce">using the rapidAPI suggestions</a> for creating a submission and getting the status of a submission. Simply replace the url of the rapid api with the url of your judge0 server, and you don’t need the rapidAPI keys and headers.</p>
+
+<h2 id="cors-issues">
+<a class="anchor" href="#cors-issues" aria-hidden="true"><span class="octicon octicon-link"></span></a>CORS Issues</h2>
+
+<p>You may also run into an issue with CORS when using the server from a different domain. To fix this, we recommend adding this to your java files.</p>
+
+<p>SecurityConfig.java</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">.</span><span class="na">cors</span><span class="o">().</span><span class="na">and</span><span class="o">()</span>
+<span class="o">.</span><span class="na">headers</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">addHeaderWriter</span><span class="o">(</span><span class="k">new</span> <span class="nc">StaticHeadersWriter</span><span class="o">(</span><span class="s">"Access-Control-Allow-Credentials"</span><span class="o">,</span> <span class="s">"true"</span><span class="o">))</span>
+    <span class="o">.</span><span class="na">addHeaderWriter</span><span class="o">(</span><span class="k">new</span> <span class="nc">StaticHeadersWriter</span><span class="o">(</span><span class="s">"Access-Control-Allow-ExposedHeaders"</span><span class="o">,</span> <span class="s">"https://YOUR_FRONTEND_USERNAME.github.io"</span><span class="o">,</span> <span class="s">"Authorization"</span><span class="o">))</span>
+    <span class="o">.</span><span class="na">addHeaderWriter</span><span class="o">(</span><span class="k">new</span> <span class="nc">StaticHeadersWriter</span><span class="o">(</span><span class="s">"Access-Control-Allow-Headers"</span><span class="o">,</span> <span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"Authorization"</span><span class="o">,</span> <span class="s">"x-csrf-token"</span><span class="o">))</span>
+    <span class="o">.</span><span class="na">addHeaderWriter</span><span class="o">(</span><span class="k">new</span> <span class="nc">StaticHeadersWriter</span><span class="o">(</span><span class="s">"Access-Control-Allow-MaxAge"</span><span class="o">,</span> <span class="s">"600"</span><span class="o">))</span>
+    <span class="o">.</span><span class="na">addHeaderWriter</span><span class="o">(</span><span class="k">new</span> <span class="nc">StaticHeadersWriter</span><span class="o">(</span><span class="s">"Access-Control-Allow-Methods"</span><span class="o">,</span> <span class="s">"POST"</span><span class="o">,</span> <span class="s">"GET"</span><span class="o">,</span> <span class="s">"OPTIONS"</span><span class="o">,</span> <span class="s">"HEAD"</span><span class="o">))</span>
+    <span class="o">.</span><span class="na">addHeaderWriter</span><span class="o">(</span><span class="k">new</span> <span class="nc">StaticHeadersWriter</span><span class="o">(</span><span class="s">"Access-Control-Allow-Origin"</span><span class="o">,</span> <span class="s">"https://YOUR_FRONTEND_USERNAME.github.io"</span><span class="o">))</span>
+</code></pre></div></div>
+
+<p>MvcConfig.java</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addCorsMappings</span><span class="o">(</span><span class="nc">CorsRegistry</span> <span class="n">registry</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">registry</span><span class="o">.</span><span class="na">addMapping</span><span class="o">(</span><span class="s">"/**"</span><span class="o">).</span><span class="na">allowedOrigins</span><span class="o">(</span><span class="s">"https://YOUR_FRONTEND_USERNAME.github.io"</span><span class="o">);</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<p>Nginx Config File on Server</p>
+
+<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="s">(</span><span class="nv">$request_method</span> <span class="p">=</span> <span class="s">OPTIONS</span> <span class="s">)</span> <span class="p">{</span>
+    <span class="kn">add_header</span> <span class="s">"Access-Control-Allow-Credentials"</span>  <span class="s">"true"</span><span class="p">;</span>
+    <span class="kn">add_header</span> <span class="s">"Access-Control-Allow-Origin"</span>  <span class="s">"https://YOUR_FRONTEND_USERNAME.github.io"</span><span class="p">;</span>
+    <span class="kn">add_header</span> <span class="s">"Access-Control-Allow-Methods"</span> <span class="s">"GET,</span> <span class="s">POST,</span> <span class="s">OPTIONS,</span> <span class="s">HEAD"</span><span class="p">;</span>
+    <span class="kn">add_header</span> <span class="s">"Access-Control-Allow-MaxAge"</span>  <span class="mi">600</span><span class="p">;</span>
+    <span class="kn">add_header</span> <span class="s">"Access-Control-Allow-Headers"</span> <span class="s">"Content-Type,</span> <span class="s">Authorization,</span> <span class="s">x-csrf-token"</span><span class="p">;</span>
+    <span class="kn">return</span> <span class="mi">200</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+  </div><a class="u-url" href="/fastpages-CSA/markdown/2023/04/21/judge0.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/fastpages-CSA/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://aaditgupta21.github.io/fastpages-CSA/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/fastpages-CSA/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>CSA Fastpages</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="“https://github.com/nighthawkcoders”" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/fastpages-CSA/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="“https://twitter.com/NighthawkCoding”" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/fastpages-CSA/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
